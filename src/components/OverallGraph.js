@@ -16,8 +16,10 @@ const OverallGraph = () => {
   }, []);
 
   const fetchData = async () => {
-    const res = await fetch(`http://localhost:5000/get/overall`);
+    console.log(process.env.REACT_APP_IP);
+    const res = await fetch(process.env.REACT_APP_IP + "/get/overall");
     const data = await res.json();
+    console.log(data.data);
     return data.data;
   };
 

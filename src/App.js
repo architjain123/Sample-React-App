@@ -1,17 +1,14 @@
-import {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import OverallGraph from './components/OverallGraph'
-import { render } from 'react-dom'
-import BusinessGraph from './components/BusinessGraph';
-import PostalGraph from './components/PostalGraph';
-import NaicsGraph from './components/NaicsGraph';
-
-
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import OverallGraph from "./components/OverallGraph";
+import { render } from "react-dom";
+import BusinessGraph from "./components/BusinessGraph";
+import PostalGraph from "./components/PostalGraph";
+import NaicsGraph from "./components/NaicsGraph";
 
 function App() {
   return (
-
     <Router>
       <div>
         <Route path="/overall" component={OverallGraph}></Route>
@@ -24,20 +21,6 @@ function App() {
         <Link to="/postal">POSTAL</Link>
       </div>
     </Router>
-
-    // <Router>
-    //   <div className="container">
-    //     <Header onAdd={()=>setShowAdd(!showAdd)} showAdd={showAdd}/>
-    //     <Route path="/" exact render={(props) => (
-    //       <>
-    //         {showAdd && <AddTask onAdd={addTask}/>}
-    //         {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>) : ("No Tasks to show") }
-    //       </>
-    //     )}></Route>
-    //     <Route path="/about" component={About}></Route>
-    //     <Footer/>
-    //   </div>
-    // </Router>
   );
 }
 
