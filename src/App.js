@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import BusinessGraph from "./components/BusinessGraph";
 import PostalGraph from "./components/PostalGraph";
 import NaicsGraph from "./components/NaicsGraph";
+import OpenBusinesses from "./components/OpenBusinesses";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Link to="/naics">NAICS</Link>
         <Route path="/postal" component={PostalGraph}></Route>
         <Link to="/postal">POSTAL</Link>
+        <Route path="/open_businesses" component={OpenBusinesses}></Route>
+        <Link to="/open_businesses">OPEN_BUSINESSES</Link>
       </div>
     </Router>
   );
