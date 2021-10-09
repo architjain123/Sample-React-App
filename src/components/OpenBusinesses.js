@@ -10,18 +10,14 @@ const OpenBusinesses = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await fetchData();
-
       setData(data);
-      console.log(data);
     };
     getData();
   }, []);
 
   const fetchData = async () => {
-    console.log(process.env.REACT_APP_IP);
     const res = await fetch(process.env.REACT_APP_IP + "/get/open_businesses");
     const data = await res.json();
-    console.log(data.data);
     return data.data;
   };
 
