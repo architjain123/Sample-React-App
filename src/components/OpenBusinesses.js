@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Highcharts from "highcharts/highstock";
 import HighchartsReact from "highcharts-react-official";
+import indicators from "highcharts/indicators/indicators";
+indicators(Highcharts);
 
 const OpenBusinesses = () => {
   const [data, setData] = useState([]);
@@ -48,17 +50,27 @@ const OpenBusinesses = () => {
     },
     series: [
       {
-        name: "San José",
+        name: "Open Businesses",
+        id: "main",
         color: "#E5A823",
+        data: data,
         tooltip: {
           valueDecimals: 2,
         },
-        credits: {
-          enabled: false,
+      },
+      {
+        name: "7 Day Moving Average",
+        type: "sma",
+        linkedTo: "main",
+        params: {
+          period: 7,
         },
-        data: data,
+        color: "red",
       },
     ],
+    credits: {
+      enabled: false,
+    },
   };
 
   return (
